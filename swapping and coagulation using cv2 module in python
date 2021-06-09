@@ -1,0 +1,48 @@
+import cv2
+rock=cv2.imread('rock.jpg')
+# rock photo appears
+cv2.imshow('1st', rock)
+cv2.waitKey()
+cv2.destroyAllWindows()
+elonmusk=cv2.imread('elonmusk2.jpg')
+#elon musk photo appears
+cv2.imshow('2st', elonmusk)
+cv2.waitKey()
+cv2.destroyAllWindows()
+rock.shape
+elonmusk.shape
+crock = rock[0:150,70:200]
+#rock crop photo perfect photo but doesnt match for swapping
+cv2.imshow('1st', crock)
+cv2.waitKey()
+cv2.destroyAllWindows()
+celon = elonmusk[10:130,40:150]
+#elon crop photo perfect photo but doesnt match for swapping
+cv2.imshow('2st',celon)
+cv2.waitKey()
+cv2.destroyAllWindows()
+import numpy
+a1 =numpy.array(rock[0:150,70:200])
+cv2.imshow('1st', a1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+b1 = numpy.array(elonmusk[10:160,20:150])
+cv2.imshow('1st', b1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+c1 = numpy.hstack((a1,b1))
+cv2.imshow('crop', c1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+crock = rock[0:183,0:183]
+celon = elonmusk[0:183,0:183]
+col =numpy.hstack((crock ,celon))
+cv2.imshow('cogulation', col)
+cv2.waitKey()
+cv2.destroyAllWindows()
+rock[0:150,70:200]=b1
+elonmusk[10:160,20:150]=a1
+col1 =numpy.hstack((crock ,celon))
+cv2.imshow('cogulation', col1)
+cv2.waitKey()
+cv2.destroyAllWindows()
